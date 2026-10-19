@@ -1,0 +1,22 @@
+// Break Point ---------------------------------------------
+$breakpoint_sp: 767px;
+$breakpoint_pc: $breakpoint_sp + 1;
+$breakpoint_wide: 1920px;
+
+// Margin --------------------------------------------------
+$margin_sp: calc(24 / 375 * 100vw);
+
+// Color ---------------------------------------------------
+$c_main: #003264;
+$c_sub: #7e9cb9;
+$c_txt: #000;
+$c_black: #000;
+$c_gray: #C6CED6;
+
+// Font Family ---------------------------------------------
+
+//ゴシック
+$ff_gothic: YuGothic, "Yu Gothic", "ヒラギノ角ゴシック", "Hiragino Sans", sans-serif;
+
+//英語
+$ff_eng: "Outfit", YuGothic, "Yu Gothic", "ヒラギノ角ゴシック", "Hiragino Sans", sans-serif;

@@ -1,0 +1,81 @@
+@charset 'UTF-8';
+
+// Import
+@import "include/_reset";
+@import "include/_variable";
+@import "include/_mixin";
+
+body {
+  font-family: $ff_gothic;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  color: $c_txt;
+  background-color: $c_gray;
+
+  -webkit-font-feature-settings: "palt";
+  font-feature-settings: "palt";
+  -webkit-font-smoothing: antialiased;
+
+  @include mq(pc) {
+    min-width: 1040px;
+  }
+
+  @include mq(sp) {
+    @include fz(14);
+    &.drawer-active {
+      overflow: hidden;
+    }
+  }
+}
+
+.pc {
+  @include mq(sp) {
+    display: none !important;
+  }
+}
+
+.sp {
+  @include mq(pc) {
+    display: none !important;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $c_txt;
+  outline: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+_:lang(x)::-internal-media-controls-overlay-cast-button,
+img {
+  image-rendering: -webkit-optimize-contrast;
+}
+
+
+// animate.css調整
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 15%, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@import "layout/_component";
+@import "layout/_header";
+@import "layout/_footer";

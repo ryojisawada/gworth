@@ -1,0 +1,1232 @@
+@charset 'UTF-8';
+
+// Import
+@import "include/_variable";
+@import "include/_mixin";
+
+//=======================================
+//  page-header
+//=======================================
+
+.page-header {
+  border-top: 1px solid #000;
+  &__ttl,
+  h1 {
+    display: block;
+    font-family: $ff_eng;
+    font-size: 11rem;
+    line-height: 1;
+    margin-top: 62px;
+    margin-bottom: 84px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    @include mq(sp) {
+      margin: vw(40) 0 vw(60);
+      letter-spacing: 0.04em;
+
+      @include fz(64);
+    }
+    span {
+      font-size: 1.5rem;
+      display: block;
+      letter-spacing: 0.08em;
+
+      @include mq(sp) {
+        @include fz(14);
+      }
+      &::before {
+        content: "／ ";
+      }
+    }
+  }
+}
+
+//=======================================
+//  page-contents
+//=======================================
+
+.page-contents {
+  padding-bottom: 220px;
+  border-bottom: 1px solid #000;
+  @include mq(sp) {
+    padding-bottom: vw(80);
+  }
+}
+
+//=======================================
+//  MISSION
+//=======================================
+
+.mission-header {
+  margin-bottom: 220px;
+  padding-bottom: 160px;
+  border-bottom: 1px solid #000;
+
+  @include mq(sp) {
+    margin-bottom: vw(80);
+    padding-bottom: vw(80);
+  }
+  &::before {
+    display: block;
+    width: 100%;
+    height: 360px;
+    content: "";
+    background: $c_main url("../images/mission/bg_header.png") center no-repeat;
+    background-size: 1920px auto;
+
+    @include mq(sp) {
+      height: vw(164);
+      background: $c_main url("../images/mission/sp/bg_header.png") center no-repeat;
+      background-size: cover;
+    }
+  }
+  &__wrap {
+    display: grid;
+
+    @include mq(pc) {
+      gap: 40px;
+      margin-top: -105px;
+
+      grid-template-columns: auto 440px;
+    }
+
+    @include mq(sp) {
+      position: relative;
+      padding-top: vw(97);
+    }
+  }
+  &__txt {
+    @include mq(pc) {
+      padding-top: 40px;
+    }
+    p {
+      line-height: calc(27 / 15);
+
+      @include mq(pc) {
+        max-width: 480px;
+      }
+    }
+  }
+  &__ttl {
+    font-family: $ff_eng;
+    font-size: 11rem;
+    line-height: 1;
+    margin-bottom: 48px;
+    letter-spacing: 0.08em;
+
+    @include mq(sp) {
+      position: absolute;
+      z-index: 2;
+      top: -0.5em;
+      right: 0;
+      left: 0;
+      letter-spacing: 0.04em;
+
+      @include fz(64);
+    }
+    span {
+      font-size: 1.5rem;
+      display: block;
+      letter-spacing: 0.08em;
+
+      @include mq(sp) {
+        @include fz(14);
+      }
+      &::before {
+        content: "／ ";
+      }
+    }
+  }
+  &__subttl {
+    font-size: 6.4rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    letter-spacing: 0.08em;
+
+    @include mq(sp) {
+      margin-bottom: 18px;
+
+      @include fz(28);
+    }
+  }
+  &__img {
+    @include mq(sp) {
+      order: -1;
+      margin-bottom: -#{vw(20)};
+    }
+  }
+}
+
+.vision {
+  margin-bottom: 220px;
+
+  @include mq(sp) {
+    margin-bottom: vw(80);
+  }
+}
+
+.value {
+  margin: 220px 0;
+  padding-bottom: 220px;
+  border-bottom: 1px solid #000;
+
+  @include mq(sp) {
+    margin: vw(80) 0;
+    padding-bottom: vw(80);
+  }
+}
+
+.value-img {
+  overflow-x: clip;
+  max-width: 1920px;
+  margin: 0 auto 220px;
+  @include mq(sp) {
+    margin: 0 auto vw(80);
+  }
+  img {
+    @include mq(pc) {
+      max-width: 1523px;
+      margin-left: auto;
+    }
+
+    @include mq(sp) {
+      width: 100%;
+    }
+  }
+}
+
+.value-list {
+  display: grid;
+  gap: 68px;
+  width: fit-content;
+  margin: 0 auto;
+  @include mq(sp) {
+    gap: vw(30);
+  }
+  &__item {
+    counter-increment: num;
+  }
+  &__ttl {
+    font-size: 3.2rem;
+    font-weight: bold;
+    display: grid;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+
+    grid-template-columns: 48px auto;
+
+    @include mq(sp) {
+      gap: vw(14);
+      margin-bottom: vw(12);
+
+      @include fz(22);
+      grid-template-columns: vw(40) auto;
+    }
+    &:not(:first-child) {
+      margin-top: 38px;
+    }
+    &::before {
+      font-size: 1.4rem;
+      display: grid;
+      box-sizing: border-box;
+      width: 48px;
+      height: 48px;
+      content: counter(num, decimal-leading-zero);
+      border: 1px solid #000;
+      border-radius: 50%;
+
+      place-content: center;
+
+      @include mq(sp) {
+        width: vw(40);
+        height: vw(40);
+
+        @include fz(13);
+      }
+    }
+  }
+}
+
+.logo-concept {
+  &__ttl {
+    font-size: 3.2rem;
+    font-weight: bold;
+    margin-bottom: 100px;
+    text-align: center;
+    letter-spacing: 0.08em;
+    @include mq(sp) {
+      margin-bottom: vw(40);
+
+      @include fz(26);
+    }
+  }
+  &__logo {
+    margin-bottom: 100px;
+
+    @include mq(sp) {
+      margin-bottom: vw(40);
+    }
+    img {
+      margin: 0 auto;
+
+      @include mq(sp) {
+        width: vw(240);
+      }
+    }
+  }
+}
+
+.logo-concept-list {
+  display: grid;
+  justify-content: space-between;
+
+  grid-template-columns: repeat(5, auto);
+
+  @include mq(sp) {
+    gap: vw(40) vw(10);
+
+    grid-template-columns: 1fr 1fr;
+  }
+  &__item {
+    display: grid;
+    gap: 40px;
+
+    grid-row: span 2;
+    grid-template-rows: subgrid;
+
+    @include mq(sp) {
+      gap: vw(20);
+    }
+    figure {
+      display: grid;
+    }
+    img {
+      width: 104px;
+      margin: auto;
+      @include mq(sp) {
+        width: vw(104);
+      }
+    }
+    p {
+      font-size: 1.5rem;
+      text-align: center;
+      @include mq(sp) {
+        @include fz(13);
+      }
+    }
+    &:nth-of-type(4) {
+      img {
+        width: 123px;
+
+        @include mq(sp) {
+          width: vw(123);
+        }
+      }
+    }
+  }
+}
+
+//=======================================
+//  SALES
+//=======================================
+
+.sales-header {
+  overflow-x: clip;
+  box-sizing: border-box;
+  padding: 76px 0 20px;
+  color: #fff;
+  background: $c_main url("../images/sales/bg_header.png") top left no-repeat;
+  background-size: 1920px auto;
+
+  @include mq(pc) {
+    min-height: 1030px;
+  }
+
+  @include mq(sp) {
+    padding: vw(30) 0 vw(32);
+    background: $c_main url("../images/sales/sp/bg_header.png") top center no-repeat;
+    background-size: cover;
+  }
+
+  &__img {
+    margin: -154px -170px 45px auto;
+
+    @include mq(pc) {
+      max-width: 1000px;
+    }
+
+    @include mq(sp) {
+      width: vw(303);
+      margin: -#{vw(50)} -#{$margin_sp} vw(20) auto;
+    }
+  }
+  &__txt {
+    p {
+      line-height: calc(27 / 15);
+
+      @include mq(pc) {
+        max-width: 480px;
+      }
+    }
+  }
+  &__ttl {
+    font-family: $ff_eng;
+    font-size: 11rem;
+    line-height: 1;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 0.08em;
+
+    @include mq(sp) {
+      line-height: calc(76 / 64);
+      position: relative;
+      z-index: 2;
+      letter-spacing: 0.04em;
+
+      @include fz(64);
+    }
+    span {
+      font-size: 1.5rem;
+      display: block;
+      letter-spacing: 0.08em;
+
+      @include mq(sp) {
+        @include fz(14);
+      }
+      &::before {
+        content: "／ ";
+      }
+    }
+  }
+  &__subttl {
+    font-size: 6.4rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    letter-spacing: 0.08em;
+
+    @include mq(sp) {
+      margin-bottom: vw(18);
+
+      @include fz(28);
+    }
+  }
+}
+
+//=======================================
+//  SNS MARKETING
+//=======================================
+
+.sns-header {
+  position: relative;
+  overflow-x: clip;
+  box-sizing: border-box;
+  padding: 76px 0 20px;
+  color: #fff;
+  background: $c_main url("../images/sns-marketing/bg_header.png") right bottom no-repeat;
+  background-size: 1920px auto;
+
+  @include mq(pc) {
+    min-height: 1137px;
+  }
+
+  @include mq(sp) {
+    padding: vw(30) 0 vw(32);
+    background: $c_main url("../images/sns-marketing/sp/bg_header.png") top center/contain no-repeat;
+    background-size: contain;
+  }
+
+  &__img {
+    margin: -154px -170px 45px auto;
+
+    @include mq(pc) {
+      max-width: 1000px;
+    }
+
+    @include mq(sp) {
+      width: vw(303);
+      margin: -#{vw(50)} -#{$margin_sp} vw(20) auto;
+    }
+  }
+  &__txt {
+    p {
+      line-height: calc(27 / 15);
+      max-width: 480px;
+
+      @include mq(sp) {
+        max-width: vw(196);
+        text-align: justify;
+        letter-spacing: 0;
+      }
+    }
+  }
+  &__ttl {
+    font-family: $ff_eng;
+    font-size: 11rem;
+    line-height: 1;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 0.08em;
+
+    @include mq(sp) {
+      line-height: calc(76 / 64);
+      position: relative;
+      z-index: 2;
+      letter-spacing: 0.04em;
+
+      @include fz(64);
+    }
+    span {
+      font-size: 1.5rem;
+      display: block;
+      letter-spacing: 0.08em;
+      &::before {
+        content: "／ ";
+      }
+    }
+  }
+  &__subttl {
+    font-size: 6.4rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    letter-spacing: 0.08em;
+
+    @include mq(sp) {
+      margin-bottom: vw(18);
+
+      @include fz(28);
+    }
+  }
+  &__phone {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0 auto;
+
+    @include mq(pc) {
+      width: 1000px;
+    }
+
+    img {
+      position: absolute;
+      right: -90px;
+      bottom: -240px;
+      width: 413px;
+
+      @include mq(sp) {
+        right: 0;
+        bottom: vw(10);
+        width: vw(122);
+      }
+    }
+  }
+}
+
+.sns-contents {
+  padding: 160px 0 220px;
+  background-color: #fafafa;
+
+  @include mq(sp) {
+    padding: vw(80) 0;
+  }
+}
+
+.sns-ttl {
+  font-size: 6.4rem;
+  font-weight: bold;
+  margin-bottom: 80px;
+  letter-spacing: 0.08em;
+
+  @include mq(sp) {
+    margin-bottom: vw(40);
+
+    @include fz(32);
+  }
+  b {
+    color: $c_main;
+  }
+  mark {
+    background: linear-gradient(transparent 92%, $c_main 92%);
+  }
+  &--center {
+    text-align: center;
+  }
+}
+
+.sns-trouble {
+  margin-bottom: 100px;
+
+  @include mq(pc) {
+    padding: 0 60px;
+  }
+  @include mq(sp) {
+    margin-bottom: vw(40);
+  }
+}
+
+.sns-solution {
+  margin-bottom: 240px;
+
+  @include mq(sp) {
+    margin-bottom: vw(80);
+  }
+  &__catch {
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 1;
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: 0.16em;
+
+    @include mq(sp) {
+      @include fz(26);
+    }
+  }
+}
+
+.sns-point {
+  &__ttl {
+    font-size: 3.2rem;
+    font-weight: bold;
+    line-height: 1;
+    display: grid;
+    box-sizing: border-box;
+    width: fit-content;
+    min-height: 80px;
+    margin: 100px auto;
+    letter-spacing: 0.08em;
+    color: $c_main;
+    border: 1px solid $c_main;
+    border-radius: 80px;
+
+    place-content: center;
+
+    @include mq(pc) {
+      min-width: 860px;
+    }
+
+    @include mq(sp) {
+      min-width: vw(300);
+      margin: vw(40) auto;
+      padding: vw(10) vw(20);
+      text-align: center;
+      @include fz(22);
+    }
+  }
+}
+
+.sns-point-list {
+  display: grid;
+  gap: 160px;
+
+  @include mq(sp) {
+    gap: vw(40);
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    counter-increment: point-num;
+
+    @include mq(pc) {
+      &:nth-of-type(even) {
+        flex-flow: row-reverse;
+      }
+    }
+
+    @include mq(sp) {
+      flex-flow: column;
+      gap: vw(20);
+    }
+  }
+  &__img {
+    @include mq(pc) {
+      width: 480px;
+    }
+  }
+  &__txt {
+    flex: 1;
+    &::before {
+      font-family: $ff_eng;
+      font-size: 2rem;
+      line-height: 1;
+      display: block;
+      width: fit-content;
+      margin-bottom: 13px;
+      padding-bottom: 3px;
+      content: "POINT" counter(point-num, decimal-leading-zero);
+      color: $c_main;
+      border-bottom: 1px solid $c_main;
+
+      @include mq(sp) {
+        margin-bottom: vw(8);
+        padding-bottom: vw(3);
+
+        @include fz(16);
+      }
+    }
+    p {
+      line-height: calc(27 / 15);
+    }
+  }
+  &__ttl {
+    font-size: 4.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 0.08em;
+    color: $c_main;
+
+    @include mq(sp) {
+      @include fz(30);
+    }
+  }
+}
+
+.sns-flow {
+  margin-bottom: 220px;
+  @include mq(sp) {
+    margin-bottom: vw(80);
+  }
+}
+
+.sns-flow-list {
+  display: flex;
+  flex-flow: wrap;
+  gap: 44px;
+
+  @include mq(pc) {
+    justify-content: center;
+  }
+  @include mq(sp) {
+    gap: vw(40);
+    flex-flow: column;
+  }
+
+  &__item {
+    box-sizing: border-box;
+    padding: 30px;
+    border: 1px solid $c_main;
+    border-radius: 10px;
+    @include mq(pc) {
+      width: calc((100% - 44px * 2) / 3);
+    }
+    @include mq(sp) {
+      padding: vw(20);
+    }
+    p {
+      line-height: calc(27 / 15);
+    }
+  }
+  &__num {
+    font-family: $ff_eng;
+    font-size: 4rem;
+    line-height: 1;
+    display: block;
+    margin-bottom: 38px;
+    text-align: center;
+    letter-spacing: 0.12em;
+    color: $c_main;
+    @include mq(sp) {
+      margin-bottom: vw(28);
+      @include fz(36);
+    }
+    &::before {
+      font-size: 1.2rem;
+      display: block;
+      margin-bottom: 8px;
+      content: "STEP";
+      letter-spacing: 0.16em;
+      @include mq(sp) {
+        margin-bottom: vw(6);
+        @include fz(12);
+      }
+    }
+    &::after {
+      display: block;
+      width: 36px;
+      height: 1px;
+      margin: 12px auto 0;
+      content: "";
+      background-color: $c_main;
+      @include mq(sp) {
+        width: vw(36);
+        margin: vw(12) auto 0;
+      }
+    }
+  }
+  &__ttl {
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    letter-spacing: 0.08em;
+    color: $c_main;
+    @include mq(sp) {
+      @include fz(20);
+      margin-bottom: vw(10);
+    }
+  }
+}
+
+.sns-case-list {
+  display: grid;
+  gap: 64px;
+  @include mq(sp) {
+    gap: vw(40);
+  }
+  &__item {
+    display: grid;
+    overflow: hidden;
+    border-radius: 10px;
+    @include mq(pc) {
+      grid-template-columns: 490px auto;
+    }
+  }
+  &__img {
+    aspect-ratio: 490/340;
+    img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
+  }
+  &__txt {
+    padding: 40px;
+    background-color: #f0f0f0;
+    @include mq(sp) {
+      padding: vw(30) vw(20) vw(40);
+    }
+    p {
+      line-height: calc(27 / 15);
+    }
+  }
+  &__ttl {
+    font-size: 3.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    letter-spacing: 0.08em;
+    @include mq(sp) {
+      margin-bottom: vw(12);
+      @include fz(22);
+    }
+    span {
+      font-family: $ff_eng;
+      font-size: 1.3rem;
+      font-weight: 500;
+      line-height: 1;
+      display: block;
+      margin-bottom: 16px;
+      letter-spacing: 0.16em;
+      @include mq(sp) {
+        margin-bottom: vw(8);
+        @include fz(12);
+      }
+      &::after {
+        content: "／";
+      }
+    }
+  }
+}
+
+.faq {
+  padding: 220px 0;
+  background-color: $c_main;
+  @include mq(sp) {
+    padding: vw(80) 0;
+  }
+  &__ttl {
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 1;
+    position: relative;
+    margin-bottom: 60px;
+    padding-bottom: 30px;
+    text-align: center;
+    letter-spacing: 0.08em;
+    color: #fff;
+    @include mq(sp) {
+      margin-bottom: vw(40);
+      padding-bottom: vw(20);
+      @include fz(32);
+    }
+    &::before {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 64px;
+      height: 1px;
+      margin: auto;
+      content: "";
+      background-color: #fff;
+      @include mq(sp) {
+        width: vw(64);
+      }
+    }
+    span {
+      font-family: $ff_eng;
+      font-size: 1.6rem;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 30px;
+      letter-spacing: 0.36em;
+      @include mq(sp) {
+        margin-bottom: vw(20);
+        @include fz(14);
+      }
+    }
+  }
+}
+
+.faq-list {
+  line-height: calc(27 / 15);
+  display: grid;
+  gap: 30px;
+  @include mq(sp) {
+    gap: vw(20);
+  }
+  &__ttl {
+    position: relative;
+    box-sizing: border-box;
+    min-height: 80px;
+    padding: 26px 40px 26px 90px;
+    border-radius: 8px 8px 0 0;
+    background-color: #fff;
+    @include mq(sp) {
+      padding: vw(20) vw(20) vw(20) vw(60);
+      border-radius: vw(6) vw(6) 0 0;
+    }
+    &::before {
+      font-family: $ff_eng;
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 1;
+      position: absolute;
+      top: 22px;
+      left: 40px;
+      display: grid;
+      width: 36px;
+      height: 36px;
+      content: "Q";
+      color: #fff;
+      border-radius: 50%;
+      background-color: $c_main;
+
+      place-content: center;
+      @include mq(sp) {
+        @include fz(14);
+        top: vw(22);
+        left: vw(20);
+        width: vw(28);
+        height: vw(28);
+      }
+    }
+  }
+  &__txt {
+    position: relative;
+    box-sizing: border-box;
+    min-height: 80px;
+    padding: 26px 40px 26px 90px;
+    border-radius: 0 0 8px 8px;
+    background-color: $c_gray;
+    @include mq(sp) {
+      padding: vw(20) vw(20) vw(20) vw(60);
+      border-radius: 0 0 vw(6) vw(6);
+    }
+    &::before {
+      font-family: $ff_eng;
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 1;
+      position: absolute;
+      top: 22px;
+      left: 40px;
+      display: grid;
+      box-sizing: border-box;
+      width: 36px;
+      height: 36px;
+      content: "A";
+      text-align: center;
+      color: $c_main;
+      border: 1px solid $c_main;
+      border-radius: 50%;
+
+      place-content: center;
+      @include mq(sp) {
+        @include fz(14);
+        top: vw(22);
+        left: vw(20);
+        width: vw(28);
+        height: vw(28);
+      }
+    }
+  }
+}
+
+//=======================================
+//  COMPANY
+//=======================================
+
+.company-data {
+  display: grid;
+  gap: 80px;
+  margin-bottom: 120px;
+  @include mq(pc) {
+    grid-template-columns: 36% auto;
+  }
+
+  @include mq(sp) {
+    gap: vw(40);
+    margin-bottom: vw(80);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 1px solid #000;
+    th,
+    td {
+      padding: 2em 0;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid #000;
+    }
+    th {
+      font-weight: bold;
+
+      @include mq(sp) {
+        width: 7em;
+      }
+    }
+  }
+}
+
+.company-bottom {
+  margin-bottom: 120px;
+
+  @include mq(sp) {
+    margin: 0 -#{$margin_sp} vw(80);
+  }
+}
+
+//=======================================
+//  RECRUIT
+//=======================================
+
+.recruit-message {
+  margin-bottom: 220px;
+
+  @include mq(sp) {
+    margin-bottom: vw(80);
+  }
+}
+
+.recruit-mission {
+  margin-bottom: 220px;
+
+  @include mq(sp) {
+    margin-bottom: vw(80);
+  }
+}
+
+.entry {
+  margin-bottom: 160px;
+
+  @include mq(sp) {
+    margin-bottom: vw(80);
+  }
+}
+
+.entry-img {
+  margin: 0 auto 160px;
+
+  @include mq(pc) {
+    overflow-x: clip;
+    max-width: 1920px;
+  }
+
+  @include mq(sp) {
+    margin-bottom: vw(80);
+  }
+  img {
+    @include mq(pc) {
+      max-width: 1460px;
+    }
+  }
+}
+
+.entry-txt {
+  p {
+    @include mq(pc) {
+      text-align: center;
+    }
+  }
+}
+
+.entry-btn {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  gap: 80px;
+  margin-top: 54px;
+
+  @include mq(sp) {
+    flex-flow: column;
+    gap: vw(30);
+    margin-top: vw(40);
+  }
+  &__item {
+    flex: 1;
+
+    @include mq(pc) {
+      max-width: 360px;
+    }
+    a {
+      font-family: $ff_eng;
+      font-size: 2.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      min-height: 80px;
+      transition: 0.3s;
+      letter-spacing: 0.24em;
+      color: #fff;
+      background-color: $c_main;
+
+      @include mq(sp) {
+        gap: vw(20);
+        width: vw(240);
+        min-height: vw(56);
+        margin: 0 auto;
+
+        @include fz(24);
+      }
+      img {
+        max-width: 30px;
+
+        @include mq(sp) {
+          max-width: vw(24);
+        }
+      }
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    &--line {
+      a {
+        background-color: #06c755;
+      }
+    }
+  }
+}
+
+
+//=======================================
+//  page-contents（page.php 固定ページ本文）
+//=======================================
+
+.page-contents {
+  h2 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    line-height: 1.4;
+    margin-bottom: 0.8em;
+    padding: 0.2em 18px;
+    letter-spacing: 0.08em;
+    color: #fff;
+    background-color: $c_main;
+
+    &:not(:first-child) {
+      margin-top: 2.5em;
+    }
+
+    @include mq(sp) {
+      font-size: 22px;
+      font-size: vw(22);
+      padding: 0.4em vw(12);
+    }
+  }
+
+  h3 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: 0.8em;
+    padding-bottom: 8px;
+    letter-spacing: 0.06em;
+    border-bottom: 1px solid $c_main;
+
+    &:not(:first-child) {
+      margin-top: 2em;
+    }
+
+    @include mq(sp) {
+      font-size: 18px;
+      font-size: vw(18);
+      padding-bottom: vw(6);
+    }
+  }
+}
+
+// strongタグ
+.page-contents strong {
+  font-weight: bold;
+}
+
+
+//=======================================
+//  page-header 背景画像バリエーション
+//=======================================
+
+body.page-oa-biz .page-header,
+body.page-smart-house .page-header {
+  &::before {
+    display: block;
+    width: 100%;
+    height: 360px;
+    content: "";
+
+    @include mq(sp) {
+      height: vw(164);
+    }
+  }
+
+  .wrap {
+    margin-top: -105px;
+
+    @include mq(sp) {
+      margin-top: vw(-40);
+    }
+  }
+}
+
+body.page-oa-biz .page-header::before {
+  background: $c_main url("../images/oa-biz/bg_header.png") center no-repeat;
+  background-size: 1920px auto;
+
+  @include mq(sp) {
+    background: $c_main url("../images/oa-biz/sp/bg_header.png") center no-repeat;
+    background-size: cover;
+  }
+}
+
+body.page-smart-house .page-header::before {
+  background: $c_main url("../images/smart-house/bg_header.png") center no-repeat;
+  background-size: 1920px auto;
+
+  @include mq(sp) {
+    background: $c_main url("../images/smart-house/sp/bg_header.png") center no-repeat;
+    background-size: cover;
+  }
+}
+
+.page-contents p {
+  margin: 20px 0;
+  line-height: 1.8;
+}

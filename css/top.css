@@ -1,0 +1,147 @@
+@charset "UTF-8";
+.mv {
+  margin-bottom: 120px;
+  position: relative;
+  background-color: #003264;
+  overflow-x: clip;
+}
+@media screen and (max-width: 767px) {
+  .mv {
+    margin-bottom: 21.3333333333dvw;
+  }
+}
+@media screen and (min-width: 768px) {
+  .mv__img {
+    width: 1920px;
+    height: 600px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.mv__txt {
+  position: absolute;
+  width: 100%;
+  max-width: 1000px;
+  height: 100%;
+  margin: auto;
+  inset: 0;
+}
+.mv__txt__wrap {
+  position: absolute;
+  bottom: 105px;
+}
+@media screen and (min-width: 768px) {
+  .mv__txt__wrap {
+    right: 20px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .mv__txt__wrap {
+    left: 6.4vw;
+    bottom: 12.2666666667dvw;
+  }
+}
+.mv__txt p {
+  font-size: 2.4rem;
+  font-weight: bold;
+  line-height: 2.2083333333;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+@media screen and (max-width: 767px) {
+  .mv__txt p {
+    font-size: 16px;
+    font-size: 4.2666666667dvw;
+    line-height: 2;
+    letter-spacing: 0.06em;
+  }
+}
+
+.topics {
+  margin-bottom: 220px;
+}
+@media screen and (max-width: 767px) {
+  .topics {
+    margin-bottom: 21.3333333333dvw;
+  }
+}
+.topics__ttl {
+  font-size: 1.6rem;
+  font-family: "Outfit", YuGothic, "Yu Gothic", "ヒラギノ角ゴシック", "Hiragino Sans", sans-serif;
+  letter-spacing: 0.14em;
+  margin-bottom: 1em;
+}
+@media screen and (max-width: 767px) {
+  .topics__ttl {
+    font-size: 16px;
+    font-size: 4.2666666667dvw;
+  }
+}
+
+.topics-top {
+  padding: 36px 0;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+@media screen and (max-width: 767px) {
+  .topics-top {
+    padding: 8dvw 0;
+  }
+}
+.topics-top__link {
+  margin-top: 40px;
+}
+.topics-top__link a {
+  transition: 0.3s;
+}
+.topics-top__link a:hover {
+  opacity: 0.7;
+}
+
+.message {
+  margin-bottom: 220px;
+}
+@media screen and (max-width: 767px) {
+  .message {
+    margin-bottom: 21.3333333333dvw;
+  }
+}
+
+.mission {
+  margin-bottom: 220px;
+}
+@media screen and (max-width: 767px) {
+  .mission {
+    margin-bottom: 21.3333333333dvw;
+  }
+}
+
+.about {
+  padding-bottom: 220px;
+  border-bottom: 1px solid #000;
+  margin-bottom: 220px;
+}
+@media screen and (max-width: 767px) {
+  .about {
+    margin-bottom: 21.3333333333dvw;
+    padding-bottom: 21.3333333333dvw;
+  }
+}
+
+.service {
+  margin-bottom: 220px;
+}
+@media screen and (max-width: 767px) {
+  .service {
+    margin-bottom: 21.3333333333dvw;
+  }
+}
+
+.product {
+  padding-bottom: 220px;
+}
+@media screen and (max-width: 767px) {
+  .product {
+    padding-bottom: 21.3333333333dvw;
+  }
+}
