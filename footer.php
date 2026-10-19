@@ -34,7 +34,7 @@
 
       <div class="footer-contents">
         <div class="footer-address">
-          <p>〒550-0014<br>大阪府大阪市西区北堀江1-1-4<br>長堀新興産ビル6F<br>TEL:06-6537-9558（代表）</p>
+          <p>〒541-0056<br>大阪府大阪市中央区久太郎町3丁目1-11<br>VORT御堂筋本町Ⅱ 5階<br>TEL:06-6537-9558（代表）</p>
         </div>
         <!-- /.footer-address -->
 
